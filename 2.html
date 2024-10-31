@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 声音特性科普</title>
+    <style>
+        /* Global styling for background and font */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #A7C7E7, #D4A5F5); /* 浅蓝到紫的梦幻渐变 */
+            color: #333;
+        }
+
+        /* Centered container */
+        .container {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        /* Main Button Styling */
+        .main-button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, #B0E0E6, #DDA0DD); /* 浅蓝紫渐变 */
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.5s ease, transform 0.3s ease;
+        }
+
+        .main-button:hover {
+            background: linear-gradient(90deg, #DDA0DD, #B0E0E6);
+            transform: scale(1.05);
+        }
+
+        /* Hidden content section styling */
+        .content {
+            display: none;
+            text-align: left;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+        }
+
+        .content h2 {
+            color: #8A2BE2;
+            font-size: 1.8em;
+        }
+
+        .content p {
+            color: #6A5ACD;
+            font-size: 1.1em;
+            margin: 15px 0;
+        }
+
+        /* Fade-in effect for content */
+        .content.show {
+            display: block;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>欢迎来到声音特性科普</h1>
+        <button class="main-button" onclick="toggleContent()" id="toggle-button">点击查看目录</button>
+
+        <div class="content" id="content">
+            <h2>认识人声特性</h2>
+            <p>频谱图作为一种强有力的工具，可以极大地促进我们对自身声音表现的深入理解。特别是在采用完全对数模式的场景下，频谱图展现了其非凡的效能，它能够更为直观地展现声音中的低频、中频与高频分布详情，从而使我们能够实现对自身声音的更加精确识别。</p>
+            <p>方法如下：首先打开AU频谱，然后右键点击图表，选择“完全对数”选项。这种功能特别有助于我们客观的辅助识别声音波形区别，因此提高效率，做针对性的频段分析与实践认识声音。</p>
+            <p>在AU频谱信号中，颜色通常用来指示不同频率或频段的信号强度，需要根据信号亮度来甄别信号强度。具体含义如下：</p>
+            <ul>
+                <li><strong>黄色信号</strong>：指高强度的信号。表示频率范围内的信号强度非常强烈。</li>
+                <li><strong>红色信号</strong>：中高强度的信号，介于黄色与深紫之间。</li>
+                <li><strong>紫色信号</strong>：深紫色指信号强度中等，信号色深浅表示强度。</li>
+                <li><strong>黑色信号</strong>：无信号或信号强度非常低，通常为黑色区域。</li>
+            </ul>
+            <p>在了解到信号强度之后，我们可以缩放频谱图，观察声音能量的分布。</p>
+            <p>希望探索声音特性的人，可以根据这些频段特性看看它们是否符合自己的风格需求。</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            var content = document.getElementById('content');
+            var button = document.getElementById('toggle-button');
+            content.classList.toggle('show');
+            button.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
